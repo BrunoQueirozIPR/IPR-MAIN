@@ -1,0 +1,373 @@
+/* Reset básico de CSS */
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Estilo base do corpo da página */
+body{
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+}
+  
+/* Estilo do hover dos botões do Material-UI */
+.MuiIconButton-root:hover {
+	background: none !important;
+	box-shadow: none !important;
+	color: #576784 !important;
+}
+
+/* Estilo do menu lateral (drawer) */
+.MuiDrawer-paperAnchorDockedLeft {
+    background-color: var(--drawer-bg) !important;
+}
+
+/* Estilo dos ícones no menu lateral */
+.MuiDrawer-paperAnchorDockedLeft svg {
+    stroke: var(--drawer-icons) !important;
+    fill: none !important;
+}
+
+.MuiDrawer-paperAnchorDockedLeft .MuiListItemIcon-root svg {
+    stroke: var(--drawer-icons) !important;
+    fill: none !important;
+}
+
+.MuiDrawer-paperAnchorDockedLeft .MuiSvgIcon-root {
+    stroke: var(--drawer-icons) !important;
+    fill: none !important;
+}
+
+/* Estilo específico para ícones do Material-UI */
+.MuiListItemIcon-root {
+    stroke: var(--drawer-icons) !important;
+    min-width: 40px !important;
+}
+
+.MuiListItemIcon-root svg {
+    stroke: var(--drawer-icons) !important;
+    fill: none !important;
+}
+
+/* Container com scroll - espaçamento */
+.makeStyles-containerWithScroll-38{
+	margin-top: 10px !important;
+	margin-left: 5px !important;
+}
+
+/* Estilo dos textos dentro do container com scroll */
+.makeStyles-containerWithScroll-38 span {
+    color: var(--drawer-text) !important; 
+    cursor: pointer !important;
+    outline: none !important;
+}
+
+/* Variáveis CSS para o tema claro */
+[data-theme="light"] {
+    --drawer-bg: #FFFFFF;      /* Fundo branco no menu lateral */
+    --drawer-text: #354567;    /* Texto azul no menu lateral */
+    --drawer-icons: #354567;   /* Ícones azuis no menu lateral */
+    --title-color: #354567;    /* Cor do título no modo claro */
+    --icon-hover: #576784;     /* Cor do hover dos ícones */
+    --search-icon: #354567;    /* Cor do ícone de busca */
+}
+
+/* Variáveis CSS para o tema escuro */
+[data-theme="dark"] {
+    --drawer-bg: #1b253b;      /* Fundo azul escuro no menu lateral */
+    --drawer-text: #FFFFFF;    /* Texto branco no menu lateral */
+    --drawer-icons: #94aab8;   /* Cor atual dos ícones para o tema escuro */
+    --title-color: #FFFFFF;    /* Cor do título no modo escuro */
+    --icon-hover: #FFFFFF;     /* Cor do hover dos ícones */
+    --search-icon: #FFFFFF;    /* Cor do ícone de busca */
+}
+
+/* Estilo da onda decorativa no background */
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
+}
+
+/* Container principal - layout grid */
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem;
+    padding: 0 2rem;
+}
+
+/* Container da imagem - layout flex */
+.img{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+
+/* Container do conteúdo de login */
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+/* Tamanho da imagem principal */
+.img img{
+	width: 800px;
+}
+
+/* Tamanho da imagem no conteúdo de login */
+.login-content img{
+    height: 100px;
+}
+
+/* Estilo do título h2 no login */
+.login-content h2{
+	margin: 15px 0;
+	color: #333;
+	text-transform: uppercase;
+	font-size: 2.9rem;
+}
+
+/* Estilo do container de input no login */
+.login-content .input-div{
+	position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #354567;
+}
+
+/* Ajuste do primeiro input */
+.login-content .input-div.one{
+	margin-top: 0;
+}
+
+/* Estilo do ícone no input */
+.i{
+	color: #354567;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Animação do ícone */
+.i i{
+	transition: .3s;
+}
+
+/* Container do campo de input */
+.input-div > div{
+    position: relative;
+	height: 45px;
+}
+
+/* Estilo do placeholder do input */
+.input-div > div > h5{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #999;
+	font-size: 18px;
+	transition: .3s;
+}
+
+/* Linha decorativa do input - antes e depois */
+.input-div:before, .input-div:after{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: rgb(167, 65, 65);
+	transition: .4s;
+}
+
+/* Posicionamento da linha decorativa - direita */
+.input-div:before{
+	right: 50%;
+}
+
+/* Posicionamento da linha decorativa - esquerda */
+.input-div:after{
+	left: 50%;
+}
+
+/* Animação da linha decorativa quando em foco */
+.input-div.focus:before, .input-div.focus:after{
+	width: 50%;
+}
+
+/* Animação do placeholder quando em foco */
+.input-div.focus > div > h5{
+	top: -5px;
+	font-size: 15px;
+}
+
+/* Cor do ícone quando input em foco */
+.input-div.focus > .i > i{
+	color: #354567;
+}
+
+/* Estilo do campo de input */
+.input-div > div > input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	color: #555;
+	font-family: 'Roboto', sans-serif;
+}
+
+/* Ajuste do input de senha */
+.input-div.pass{
+	margin-bottom: 4px;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-color: #155e75;
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+/* .btn:hover{
+	background-position: right;
+} */
+
+
+@media screen and (max-width: 1050px){
+	.container{
+		grid-gap: 5rem;
+	}
+}
+
+@media screen and (max-width: 1000px){
+	form{
+		width: 290px;
+	}
+
+	.login-content h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+	}
+
+	.img img{
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.container{
+		grid-template-columns: 1fr;
+	}
+
+	.img{
+		display: none;
+	}
+
+	.wave{
+		display: none;
+	}
+
+	.login-content{
+		justify-content: center;
+	}
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorPrimary.MuiAppBar-positionStatic {
+    background-color: #232d45 !important; /* Azul escuro */
+}
+
+.MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.MuiTab-fullWidth {
+    color: #FFFFFF !important;
+}
+
+.makeStyles-btnContainer-69{
+	background-color: #354567 !important;
+	border-top-right-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+	margin-top: 12px;
+}
+
+.MuiPaper-root.makeStyles-mainContainer-65.MuiPaper-elevation1.MuiPaper-rounded {
+    background-color: #232d45 !important;
+    
+}
+
+.MuiButton-contained {
+    box-shadow: none !important;
+	border: 1px solid;
+	background-color: #232d45 !important;
+	border-radius: 10px;
+}
+
+#modal-cancel-button {
+    color: #FFFFFF !important;
+}
+
+
+.makeStyles-messageList-75{
+	background-color: #232d45 !important;
+}
+
+
+/* Estilo para o botão de cancelar no modal de confirmação */
+.MuiDialog-root .MuiDialogActions-root .MuiButton-root:first-child {
+  background-color: #a74141;
+  color: #FFFFFF !important;
+  border-radius: 10px;
+}
+
+/* Estilo para o botão de confirmar no modal de confirmação */
+.MuiDialog-root .MuiDialogActions-root .MuiButton-root:last-child {
+  color: #FFFFFF !important;
+}
+
+#newAnnouncement-button {
+  background-color: #536588;
+  color: #FFFFFF !important;
+}
+.makeStyles-contactsHeader-80{
+  margin-top: 20px !important;
+}
+
+table td {
+  border-color: transparent !important;
+}
+
+table th {
+  border-color: transparent !important;
+}
+
+/* Estilo específico para ícones do Lucide */
+
+/* Remover ou ajustar regra que força cor branca */
+.MuiTypography-root.MuiTypography-h6 {
+  color: var(--title-color) !important;
+}
